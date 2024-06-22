@@ -18,7 +18,9 @@ app.use(express.json()) // this is express midleware
 app.use(express.urlencoded({extended: false}))
 
 // this express midleware helps to the frontend share resourse / simply we can use/ app.use(cors())
-app.use(cors())
+app.use(cors(
+    {origin: ["http://localhost:3000","https://mern-todoapp-aawd.onrender.com"]}
+))
 
 app.use("/api/task", Routes)
 // Easy way to connect mongo db method 1
